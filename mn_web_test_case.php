@@ -96,6 +96,7 @@ class MnWebTestCase extends DrupalWebTestCase {
     db_query("UPDATE {system} SET status = 0 WHERE type = 'theme'");
     db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' AND name = 'jake'");
     db_query("UPDATE {blocks} SET region = '' WHERE theme = 'jake'");
+    variable_set('theme_default', 'jake');
 
     // Use temporary files directory with the same prefix as database.
     $this->originalFileDirectory = file_directory_path();
